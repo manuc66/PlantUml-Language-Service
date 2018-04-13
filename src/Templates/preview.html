@@ -1,0 +1,30 @@
+﻿<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://cdn.rawgit.com/anvaka/panzoom/v4.4.0/dist/panzoom.min.js"></script>
+</head>
+<body>
+    <style>
+        // {3}
+    </style>
+    <div class="collapse"{5}>
+        <input id="diagramurl_collapse" type="checkbox">
+        <label for="diagramurl_collapse" onclick>Diagram Url</label>
+        <div class="collapse_content">
+            <div class="diagramurl_{4}">{0}</div>
+        </div>
+    </div>
+
+    <div class="plantuml-wrapper">
+        <img id="preview"
+             src="{0}"
+             onerror="this.onerror=null;this.src='{1}';">
+    </div>
+    <div class="feedback">
+        {2}
+    </div>
+    <script>
+        var instance = panzoom(document.getElementById('preview'));
+    </script>
+</body>
+</html>

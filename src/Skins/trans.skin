@@ -1,0 +1,20 @@
+﻿'
+' Rove Monteux's Grayscale Shadows Transparent theme for PlantUML.
+'
+' @license GPLv3, magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt 
+' @version 1.0
+' @author  Rove Monteux, https://monteux.cf/
+'
+' 
+skinparam monochrome true
+skinparam linetype ortho
+skinparam componentStyle uml2
+skinparam UsecaseBorderColor DarkGray
+skinparam UsecaseBackgroundColor transparent
+skinparam UsecaseArrowColor Gray
+skinparam ActorBorderColor DarkGray
+skinparam ActorBackgroundColor transparent
+skinparam backgroundColor transparent
+skinparam NoteBorderColor DarkGray
+skinparam defaultFontName Arial
+skinparam padding 1.3

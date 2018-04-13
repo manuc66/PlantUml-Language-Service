@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+  <Include href="KnownImageIds.vsct" />
+
+  <Commands package="guidSampleWindowCommandPackage">
+    
+    <Buttons>
+      
+      <Button guid="guidSampleWindowCommandPackageCmdSet" id="SampleWindowCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1" />
+        <Icon guid="ImageCatalogGuid" id="UMLModel" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>PlantUml Language Reference</ButtonText>
+        </Strings>
+      </Button>
+      
+      <Button guid="guidVSPackageCommandFileContextMenuCmdSet" id="FileContextMenuCommandId" type="Button">
+        <Icon guid="guidImages" id="bmpPicSearch" />
+        <Strings>
+          <ButtonText>Preview Diagram</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidVSPackageCommandCodeWindowContextMenuCmdSet" id="CodeWindowContextMenuCommandId" type="Button">
+        <Icon guid="guidImages" id="bmpPicSearch" />
+        <Strings>
+          <ButtonText>Preview Diagram</ButtonText>
+        </Strings>
+      </Button>      
+      
+      <Button guid="guidVSPackageCmdSet" id="cmdidDiagramPreviewToolWindowCommand" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1" />
+        <Icon guid="guidImages" id="bmpPicSearch" />
+        <Strings>
+          <ButtonText>PlantUml Preview Window</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+    
+    <Groups>
+      <Group guid="guidVSPackageCommandFileContextMenuCmdSet" id="FileContextMenuCommandGroup" />
+      <Group guid="guidVSPackageCommandCodeWindowContextMenuCmdSet" id="CodeWindowContextMenuCommandGroup" />
+      <Group guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" priority="0x0000">
+        <Parent guid="plantUmlContextCommandSet" id="plantUmlContextMenu" />
+      </Group>
+    </Groups>
+  
+      <Bitmaps>
+        <Bitmap guid="guidImages" href="Resources\ctx.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+    </Bitmaps> 
+  
+  </Commands>
+  
+   <CommandPlacements>
+
+      <!-- Placement for group. The parent of a group is a menu, context menu or toolbar. 
+           The priority sets the position of the group compared to the priority of other existing groups in the menu.    
+      -->
+      <CommandPlacement guid="guidVSPackageCommandFileContextMenuCmdSet" id="FileContextMenuCommandGroup" priority="0xFFFF">
+         <!-- The parent of the group will be the file context menu -->
+         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" />
+      </CommandPlacement>
+
+      <!-- Placement for command. The parent of a command is always a group, never a menu, context menu or toolbar. -->
+      <CommandPlacement guid="guidVSPackageCommandFileContextMenuCmdSet" id="FileContextMenuCommandId" priority="0x0001">
+         <Parent guid="guidVSPackageCommandFileContextMenuCmdSet" id="FileContextMenuCommandGroup" />
+      </CommandPlacement>
+
+     <CommandPlacement guid="guidVSPackageCommandCodeWindowContextMenuCmdSet" id="CodeWindowContextMenuCommandGroup" priority="0xFFFF">
+       <!-- The parent of the group will be the code window context menu -->
+       <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+     </CommandPlacement>
+
+     <!-- Placement for command. The parent of a command is always a group, never a menu, context menu or toolbar. -->
+     <CommandPlacement guid="guidVSPackageCommandCodeWindowContextMenuCmdSet" id="CodeWindowContextMenuCommandId" priority="0x0001">
+       <Parent guid="guidVSPackageCommandCodeWindowContextMenuCmdSet" id="CodeWindowContextMenuCommandGroup" />
+     </CommandPlacement>    
+     
+   </CommandPlacements>  
+    
+    
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidSampleWindowCommandPackage" value="{ff4f80de-da63-4ca8-9f09-acf70fdc5cb5}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidSampleWindowCommandPackageCmdSet" value="{520eea4d-2604-4bee-bd8d-9dc202d4d107}">
+      <IDSymbol name="SampleWindowCommandId" value="0x0100" />
+    </GuidSymbol>
+
+      <GuidSymbol name="guidVSPackageCommandFileContextMenuCmdSet" value="{b394839a-d886-44d2-94c9-ffeeb48d97d5}">
+         <IDSymbol name="FileContextMenuCommandGroup" value="0x1020" />
+         <IDSymbol name="FileContextMenuCommandId" value="0x0100" />
+      </GuidSymbol>
+
+    <GuidSymbol name="guidVSPackageCommandCodeWindowContextMenuCmdSet" value="{0c1acc31-15ac-417c-86b2-eefdc669e8bf}">
+      <IDSymbol name="CodeWindowContextMenuCommandGroup" value="0x1020" />
+      <IDSymbol name="CodeWindowContextMenuCommandId" value="0x0100" />
+    </GuidSymbol>        
+      
+    <GuidSymbol name="plantUmlContextCommandSet" value="{D309f791-903f-11D0-9EFC-00A0C911004F}">
+      <IDSymbol name="plantUmlContextMenu" value="0x0430" />
+    </GuidSymbol>
+  
+  
+    <GuidSymbol value="{0334c94c-ba54-4247-aea1-53b4331d1515}" name="guidVSPackageCmdSet">
+      <IDSymbol value="256" name="cmdidDiagramPreviewToolWindowCommand" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{109685c7-cbb4-40cd-86bf-8195791c68c5}" name="guidImages">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

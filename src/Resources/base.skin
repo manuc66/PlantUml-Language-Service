@@ -1,0 +1,460 @@
+﻿skinparam Activity {
+	ArrowColor	
+	ArrowFontColor	
+	ArrowFontName	
+	ArrowFontSize	
+	ArrowFontStyle	
+	BackgroundColor	
+	BarColor	
+	BorderColor	
+	BorderThickness	
+	DiamondFontColor	
+	DiamondFontName	
+	DiamondFontSize	
+	DiamondFontStyle	
+	EndColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StartColor	
+}
+skinparam Actor {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Agent {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Artifact {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam BackgroundColor	
+skinparam Boundary {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Caption {
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+}
+skinparam Circled {
+	CharacterFontColor	
+	CharacterFontName	
+	CharacterFontSize	
+	CharacterFontStyle	
+	CharacterRadius	
+}
+skinparam Class {
+	ArrowColor	
+	AttributeFontColor	
+	AttributeFontName	
+	AttributeFontSize	
+	AttributeFontStyle	
+	AttributeIconSize	
+	BackgroundColor	
+	BorderColor	
+	BorderThickness	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	HeaderBackgroundColor	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Cloud {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Collections {
+	BackgroundColor	
+	BorderColor	
+}
+skinparam Component {
+	ArrowColor	
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Control {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Database {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Default {
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+}
+skinparam Entity {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Folder {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Footer {
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+}
+skinparam Frame {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Generic {
+	ArrowFontColor	
+	ArrowFontName	
+	ArrowFontSize	
+	ArrowFontStyle	
+}
+skinparam Header {
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+}
+skinparam HyperlinkColor	
+skinparam Icon {
+	PackageBackgroundColor	
+	PackageColor	
+	PrivateBackgroundColor	
+	PrivateColor	
+	ProtectedBackgroundColor	
+	ProtectedColor	
+	PublicBackgroundColor	
+	PublicColor	
+}
+skinparam Interface {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Legend {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+}
+skinparam Monochrome	
+skinparam Node {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Note {
+	BackgroundColor	
+	BorderColor	
+	BorderThickness	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+}
+skinparam Object {
+	ArrowColor	
+	AttributeFontColor	
+	AttributeFontName	
+	AttributeFontSize	
+	AttributeFontStyle	
+	BackgroundColor	
+	BorderColor	
+	BorderThickness	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Package {
+	BackgroundColor	
+	BorderColor	
+	BorderThickness	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Participant {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+}
+skinparam Partition {
+	BackgroundColor	
+	BorderColor	
+	BorderThickness	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+}
+skinparam Queue {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Rectangle {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Sequence {
+	ActorBorderThickness	
+	ArrowColor	
+	ArrowFontColor	
+	ArrowFontName	
+	ArrowFontSize	
+	ArrowFontStyle	
+	ArrowThickness	
+	BoxBackgroundColor	
+	BoxBorderColor	
+	BoxFontColor	
+	BoxFontName	
+	BoxFontSize	
+	BoxFontStyle	
+	DelayFontColor	
+	DelayFontName	
+	DelayFontSize	
+	DelayFontStyle	
+	DividerBackgroundColor	
+	DividerBorderColor	
+	DividerBorderThickness	
+	DividerFontColor	
+	DividerFontName	
+	DividerFontSize	
+	DividerFontStyle	
+	GroupBackgroundColor	
+	GroupBodyBackgroundColor	
+	GroupBorderColor	
+	GroupBorderThickness	
+	GroupFontColor	
+	GroupFontName	
+	GroupFontSize	
+	GroupFontStyle	
+	GroupHeaderFontColor	
+	GroupHeaderFontName	
+	GroupHeaderFontSize	
+	GroupHeaderFontStyle	
+	LifeLineBackgroundColor	
+	LifeLineBorderColor	
+	LifeLineBorderThickness	
+	NewpageSeparatorColor	
+	ParticipantBorderThickness	
+	ReferenceBackgroundColor	
+	ReferenceBorderColor	
+	ReferenceBorderThickness	
+	ReferenceFontColor	
+	ReferenceFontName	
+	ReferenceFontSize	
+	ReferenceFontStyle	
+	ReferenceHeaderBackgroundColor	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+	TitleFontColor	
+	TitleFontName	
+	TitleFontSize	
+	TitleFontStyle	
+}
+skinparam State {
+	ArrowColor	
+	AttributeFontColor	
+	AttributeFontName	
+	AttributeFontSize	
+	AttributeFontStyle	
+	BackgroundColor	
+	BorderColor	
+	EndColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StartColor	
+}
+skinparam Stereotype {
+	ABackgroundColor	
+	CBackgroundColor	
+	EBackgroundColor	
+	IBackgroundColor	
+}
+skinparam Storage {
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}
+skinparam Swimlane {
+	BorderColor	
+	BorderThickness	
+	TitleFontColor	
+	TitleFontName	
+	TitleFontSize	
+	TitleFontStyle	
+}
+skinparam Title {
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+}
+skinparam Usecase {
+	ArrowColor	
+	BackgroundColor	
+	BorderColor	
+	FontColor	
+	FontName	
+	FontSize	
+	FontStyle	
+	StereotypeFontColor	
+	StereotypeFontName	
+	StereotypeFontSize	
+	StereotypeFontStyle	
+}

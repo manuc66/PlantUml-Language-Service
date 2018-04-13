@@ -1,0 +1,44 @@
+﻿; Registers the language grammar files with Visual Studio
+[$RootKey$\TextMate\Repositories]
+"PlantUml"="$PackageFolder$\Grammars"
+
+; PlantUml
+[$RootKey$\ShellFileAssociations\.plantuml]
+"DefaultIconMoniker"="KnownMonikers.UMLModel"
+[$RootKey$\ShellFileAssociations\.plant]
+"DefaultIconMoniker"="KnownMonikers.UMLModel"
+[$RootKey$\ShellFileAssociations\.puml]
+"DefaultIconMoniker"="KnownMonikers.UMLModel"
+[$RootKey$\ShellFileAssociations\.pu]
+"DefaultIconMoniker"="KnownMonikers.UMLModel"
+
+[$RootKey$\ShellFileAssociations\.iuml]
+"DefaultIconMoniker"="KnownMonikers.UMLModel"
+[$RootKey$\ShellFileAssociations\.uml]
+"DefaultIconMoniker"="KnownMonikers.UMLModel"
+
+; macro
+[$RootKey$\ShellFileAssociations\.macro]
+"DefaultIconMoniker"="KnownMonikers.Script"
+
+; skin
+[$RootKey$\ShellFileAssociations\.wsd]
+"DefaultIconMoniker"="KnownMonikers.ColorPalette"
+
+;file extensions / not working [causing appication break]
+;[$RootKey$\Languages\File Extensions\.plantuml]
+;@="{266968e5-e0c8-44ff-8b78-bf5db691505d}"
+;[$RootKey$\Languages\File Extensions\.plant]
+;@="{266968e5-e0c8-44ff-8b78-bf5db691505d}"
+;[$RootKey$\Languages\File Extensions\.puml]
+;@="{266968e5-e0c8-44ff-8b78-bf5db691505d}"
+;[$RootKey$\Languages\File Extensions\.pu]
+;@="{266968e5-e0c8-44ff-8b78-bf5db691505d}"
+
+;[$RootKey$\Languages\File Extensions\.iuml]
+;@="{266968e5-e0c8-44ff-8b78-bf5db691505d}"
+;[$RootKey$\Languages\File Extensions\.uml]
+;@="{266968e5-e0c8-44ff-8b78-bf5db691505d}"
+
+;[$RootKey$\Editors\{266968e5-e0c8-44ff-8b78-bf5db691505d}\Extensions]
+;"code++.PlantUml"=dword:00000001

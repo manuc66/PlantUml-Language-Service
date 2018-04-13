@@ -1,0 +1,161 @@
+﻿injection {}
+
+@charset "UTF-8";
+
+.collapse {
+    border-radius: .5em;
+}
+
+.collapse > input[type="checkbox"] {
+    display: none;
+}
+
+    .collapse > input[type="checkbox"]:checked ~ label::after {
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    .collapse > input[type="checkbox"]:checked ~ .collapse_content {
+        display: block;
+    }
+
+.collapse > label {
+    display: block;
+    padding: 8px;
+    cursor: pointer;
+    background-color: #2f2f2f;
+    color:whitesmoke;
+}
+
+    .collapse > label::after {
+        content: '▾';
+        display: inline-block;
+        margin-left: 4px;
+    }
+
+.collapse_content {
+    padding: 8px;
+    display: none;
+}
+
+.plantuml-wrapper {
+    margin-top:10px;
+    text-align: center;
+    float: left;
+    width: 75%;
+}
+
+#preview {
+    zoom: 150%;
+}
+
+.feedback {
+    right: 15px;
+    float: right;
+    width: auto;
+    text-align: center !important;
+}
+
+.circle {
+    margin-top:10px;
+    text-align: center;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    width: 20px;
+    height: 20px;
+    background-color: #5cb85c;
+    zoom: 180%;
+    cursor:pointer;
+    right:25px;
+    position:fixed;
+}
+
+.error {
+    background-color: #d9534f !important;
+}
+
+.warning {
+    background-color: #f89406 !important;
+}
+
+.none {
+    background-color: #2f2f2f !important;
+}
+
+.checkmark-info, .checkmark-error, .checkmark-none, .checkmark-warning {
+    display: inline-block;
+}
+
+    .checkmark-info:after {
+        content: '\2661';
+        display: block;
+        color: white;
+        font-size:smaller;
+    }
+
+    .checkmark-error:after {
+        content: '!';
+        display: block;
+        color: white;
+    }
+
+    .checkmark-none:after {
+        content: '\203D';
+        display: block;
+        color: white;
+    }
+
+    .checkmark-warning:after {
+        content: '?';
+        display: block;
+        color: white;
+    }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #2f2f2f;
+    color: whitesmoke;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+    font-size:x-small;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.diagramurl_info, .diagramurl_warning, .diagramurl_error {
+    width: auto;
+    padding: 12px;
+    border-radius: .5em;
+    word-wrap:break-word;
+}
+
+.diagramurl_info {
+    color: #00529B;
+    background-color: #BDE5F8;
+}
+
+.diagramurl_warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+}
+
+.diagramurl_error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}

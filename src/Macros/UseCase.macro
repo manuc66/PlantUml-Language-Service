@@ -1,0 +1,34 @@
+skinparam note {
+    BackgroundColor whitesmoke
+    BorderColor slategrey
+}
+
+skinparam packageStyle rectangle
+skinparam BorderColor darkslategrey
+skinparam defaultfontsize 14
+skinparam objectfontsize 18
+skinparam package {
+    BorderColor slategrey
+}
+
+skinparam ArrowColor slategrey
+
+skinparam usecase {
+    BackgroundColor aliceblue
+    BackgroundColor<< Reserved >> thistle
+    BackgroundColor<< Conditional >> powderblue    
+    BackgroundColor<< Primary >> whitesmoke
+    BackgroundColor<< Secondary >> lavender
+    BackgroundColor<< Tertiary >> plum    
+    BorderColor slategrey
+    ArrowColor slategrey
+}
+
+skinparam ActorBackgroundColor whitesmoke
+skinparam ActorBackgroundColor<< Registered >> aliceblue
+skinparam ActorBackgroundColor<< Admin >> slategrey
+skinparam ActorBorderColor darkslategrey
+
+!definelong AnonActor(name)
+    Actor name << Guest >>
+!enddefinelong

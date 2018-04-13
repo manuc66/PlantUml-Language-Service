@@ -1,0 +1,24 @@
+﻿skinparam note {
+    BackgroundColor whitesmoke
+    BorderColor slategrey
+}
+
+skinparam packageStyle rectangle
+skinparam BorderColor darkslategrey
+skinparam defaultfontsize 14
+skinparam objectfontsize 18
+skinparam package {
+    BorderColor slategrey
+}
+
+skinparam ArrowColor slategrey
+
+skinparam activity {
+  StartColor slategrey
+  BarColor slategrey 
+  EndColor slategrey
+  BackgroundColor whitesmoke
+  BackgroundColor<< Begin >> aliceblue
+  BorderColor slategrey
+
+}

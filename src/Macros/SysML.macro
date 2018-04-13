@@ -1,0 +1,69 @@
+skinparam note {
+    BackgroundColor whitesmoke
+    BorderColor slategrey
+}
+
+skinparam packageStyle rectangle
+skinparam BorderColor darkslategrey
+skinparam defaultfontsize 14
+skinparam objectfontsize 18
+skinparam package {
+    BorderColor slategrey
+}
+
+skinparam ArrowColor slategrey
+
+skinparam object {
+    BorderColor slategrey
+    BackgroundColor<< test >> whitesmoke
+    BackgroundColor<< requirement >> darkseagreen
+    BackgroundColor<< business-need >> business
+    BackgroundColor<< generic >> lightgrey
+    BackgroundColor<< option >> powderblue
+}
+
+!define NewLine(text) \n##text
+!define Test(name) object name << Test >>
+!define Scenario(test,testable) test : ===== Scenario => (testable)
+!define Verify(requirement,testable) requirement <..{ testable : << verify >>
+!define Associate(firstrequirement,secondrequirement) firstrequirement #.# secondrequirement : << associate >>
+!define Associate(firstrequirement,secondrequirement,direction) firstrequirement #.direction.# secondrequirement : << associate >>
+!define Derive(firstrequirement,secondrequirement,direction="d") firstrequirement #.direction.> secondrequirement : << derive >>
+!define Expectation(requirement, detail) requirement : ==Expectations: NewLine(##detail)
+!define TestMethod(requirement, detail) requirement##_Test : ====Verify detail
+!define Criticality(requirement, detail) requirement : ==Importance: NewLine(##detail)
+!define Describe(requirement, detail) requirement : ===Description: NewLine(##detail)
+!definelong  Requirement(name,definition) 
+    object name << requirement >>
+    name : ===Description: NewLine(##definition)
+!enddefinelong
+!definelong  BusinessNeed(name,definition) 
+    object name << business >>
+    name : ==Description: NewLine(##definition)
+!enddefinelong
+!definelong  Generic(name,definition) 
+    object name << generic >>
+    name : ==Description: NewLine(##definition)
+!enddefinelong
+!definelong  TestWithScenario(name,testable) 
+    object name << Test >>
+    name : ===== Scenario => (testable)
+!enddefinelong
+!definelong  VerifyWithTest(testable) 
+    object testable##_Test << Test >>
+    testable <..{ testable##_Test : << verify >>
+!enddefinelong
+!definelong  VerifyWithTest(testable,direction) 
+    object testable##_Test << Test >>
+    testable <.direction.{ testable##_Test : << verify >>
+!enddefinelong
+!definelong BusinessNeed(name,definition,additional,direction = "u")
+    BusinessNeed(name,##definition)
+    note "##additional" as name##_note
+    name##_note }-direction-> name
+!enddefinelong
+!definelong  Option(requirement,name,direction="d") 
+    object requirement##_##name << option >>
+	Derive(requirement, requirement##_##name,direction)
+!enddefinelong
+
