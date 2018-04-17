@@ -76,7 +76,7 @@ The Preview window is composed of 3 areas:
 
 ###### Badges
  
-|![OK](art/ok.png)|![warn](art/warning.png)|![error](art/error.png)|![unknown](art/unknown.png)|
+|![OK](art/OK.png)|![warn](art/warning.png)|![error](art/error.png)|![unknown](art/unknown.png)|
 |:----:|:----:|:----:|:----:|
 | OK | Warning | Error | Unknown |
 
