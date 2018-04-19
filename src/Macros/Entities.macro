@@ -1,0 +1,7 @@
+﻿!define DATA_TABLE << (T, orchid) Table >>
+!define PROCEDURE << (P, aqua) Table >>
+!define LINK_TABLE << (L, pink) Linking Table >>
+!define ENTITY << (E, yellow) Entity >>
+!define one_to_many(one, manyof) one -{ manyof
+!define many_to_many(1many, 2many) 1many }-{ 2many
+!define one_to_one(1one,2one) 1one -u- 2one

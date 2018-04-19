@@ -1,0 +1,8 @@
+@startuml
+
+object foo
+object bar
+
+foo -> bar
+
+@enduml

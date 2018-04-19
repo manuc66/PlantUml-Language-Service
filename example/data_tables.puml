@@ -1,0 +1,55 @@
+@startuml
+
+!import Entities
+
+package "Data Tables" {
+    class Kids DATA_TABLE {
+        +Id : GUID
+        +Name : string
+    }
+    class Parents DATA_TABLE {
+        +Id : GUID
+        +Name : string
+    }
+    class Charts DATA_TABLE {
+        +Id : GUID
+        +DateRange : Date
+    }
+    class Tasks DATA_TABLE {
+        +Id : GUID
+        +Name : string
+        +Description : string
+        +Score : integer
+    }
+    package "Linking Tables" {
+        class Parent_Child_Linker LINK_TABLE {
+            +ChildId: GUID
+            +ParentId : GUID
+        }
+        class Charts_Tasks_Linker LINK_TABLE {
+            +TaskId: GUID
+            +ChartId: GUID
+        }
+        class Charts_Tasks_Linker LINK_TABLE {
+            +TaskId: GUID
+            +ChartId: GUID
+        }
+        class Charts_Kids_Linker LINK_TABLE {
+            +ChildId: GUID
+            +ChartId: GUID
+        }
+    }
+}
+
+package "Stored procedures" {
+
+}
+
+Charts_Tasks_Linker -down-> Charts
+Charts_Tasks_Linker -down-> Tasks
+Parent_Child_Linker -up-> Kids
+Parent_Child_Linker -up-> Parents
+Charts_Kids_Linker -up-> Kids
+Charts_Kids_Linker -down-> Charts
+
+@enduml

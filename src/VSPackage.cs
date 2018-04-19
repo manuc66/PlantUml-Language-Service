@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using PlantUmlLanguageService.Commands;
-using PlantUmlLanguageService.Intellisense;
+//using PlantUmlLanguageService.Intellisense;
 using PlantUmlLanguageService.ToolWindow;
 using Task = System.Threading.Tasks.Task;
 
@@ -73,14 +73,14 @@ namespace PlantUmlLanguageService
             return ReferenceWindow.Title;
         }
 
-        ///// <summary>
-        ///// Initialization of the package; this method is called right after the package is sited, so this is the place
-        ///// where you can put all the initialization code that rely on services provided by VisualStudio.
-        ///// </summary>
+        /// <summary>
+        /// Initialization of the package; this method is called right after the package is sited, so this is the place
+        /// where you can put all the initialization code that rely on services provided by VisualStudio.
+        /// </summary>
         //protected override void Initialize()
         //{
         //    base.Initialize();
-        //    PlantUmlLanguageService.ToolWindow.DiagramPreviewToolWindowCommand.Initialize(this);
+        //    DiagramPreviewToolWindowCommand.Initialize(this);
         //}
 
     }
