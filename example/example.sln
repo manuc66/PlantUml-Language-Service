@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{57A6073C-AEFE-48EB-8640-7781D074098F}"
 	ProjectSection(SolutionItems) = preProject
-		defined.puml = defined.puml
+		data_tables.puml = data_tables.puml
 		foo.puml = foo.puml
 	EndProjectSection
 EndProject

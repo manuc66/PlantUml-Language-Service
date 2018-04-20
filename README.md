@@ -64,9 +64,7 @@ A context menu option has been added to the code window and solution explorer al
 
 #### Feedback
 
-The preview window will render the diagram and provide feedback.
-
-The Preview window is composed of 3 areas:
+The preview window will render the diagram and provide feedback in a panel composed of 3 areas:
 
 - **Top Panel** ~ collapsible holds the generated diagram url
 - **Canvas** ~ the rendered diagram
@@ -102,7 +100,7 @@ The PlantUml Language Service respects all common preprocessor commands, and can
 
 While `!inlcude` is usable within the language service, there are caveats:
 
-- can only make use of files located inside the active solution directory
+- makes use of files located inside the active solution directory
 - file to include should be specified [NAME].[EXTENSION]:
 
 `!include somefile.extension`
@@ -141,10 +139,10 @@ Provides short hand commands to create and associate requirements, tests, and ex
 | `Test(name)` | create an unlinked test entry |
 | `Scenario(test,testable)` | associate a test with a requirement via scenario |
 |`Verify(requirement,testable)` | define acceptance as test verified for requirement |
-|`Associate(firstrequirement,secondrequirement)` | create associateion between 2 requirements |
+|`Associate(firstrequirement,secondrequirement)` | create association between 2 requirements |
 |`Derive(firstrequirement,secondrequirement)`| indicates requirement is derived from existing need |
 | `Expectation(requirement, detail)` | outlines the expectation of a requirement |
-|` Criticality(requirement, detail)`| describes the criticality os a requirement |
+|` Criticality(requirement, detail)`| describes the criticality of a requirement |
 |`Describe(requirement, detail)` | provides a simple description of a requirement |
 
 &nbsp;
