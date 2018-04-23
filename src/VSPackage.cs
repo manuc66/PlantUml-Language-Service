@@ -28,7 +28,7 @@ namespace PlantUmlLanguageService
     [ProvideToolWindow(typeof(DiagramPreviewToolWindow),Style =VsDockStyle.MDI)]
     public sealed class VSPackage : AsyncPackage
     {
-        public const string PackageGuidString = "ff4f80de-da63-4ca8-9f09-acf70fdc5cb5";
+        public const string PackageGuidString = "c097b9f6-5f54-40b4-aa9f-5fe227fc3bb1"; //"ff4f80de-da63-4ca8-9f09-acf70fdc5cb5";
         //private EditorFactory editorFactory;
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
