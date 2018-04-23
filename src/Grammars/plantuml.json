@@ -65,7 +65,10 @@
           "include": "#Keywords"
         },
         {
-          "include": "#Gerneral"
+          "include": "#General"
+        },
+        {
+          "include": "#StereoType"
         }
       ]
     },
@@ -97,7 +100,10 @@
       "include": "#Keywords"
     },
     {
-      "include": "#Gerneral"
+      "include": "#General"
+    },
+    {
+      "include": "#StereoType"
     }
   ],
   "repository": {
@@ -202,7 +208,7 @@
         {
           "comment": "line begin keywords",
           "name": "keyword.other.linebegin.source.wsd",
-          "match": "(?i)^\\s*(usecase|actor|object|participant|boundary|control|entity|database|create|component|interface|package|node|folder|frame|cloud|annotation|enum|abstract|class|abstract\\s+class|state|autonumber(\\s+stop|resume)?|activate|deactivate|destroy|newpage|alt|else|opt|loop|par|break|critical|group|box|rectangle|namespace|partition)\\b"
+          "match": "(?i)^\\s*(usecase|actor|object|participant|boundary|control|entity|database|create|component|interface|package|node|folder|frame|cloud|annotation|enum|abstract|class|abstract\\s+class|state|autonumber(\\s+stop|resume)?|activate|deactivate|destroy|newpage|alt|else|opt|loop|par|break|critical|group|box|rectangle|namespace|partition|archimate|sprite)\\b"
         },
         {
           "comment": "whole line keywords",
@@ -216,7 +222,7 @@
         }
       ]
     },
-    "Gerneral": {
+    "General": {
       "patterns": [
         {
           "comment": "multi-line title, enables ctrl+r jump list.",
@@ -429,7 +435,7 @@
               "name": "keyword.other.header_legend_footer.source.wsd"
             }
           },
-          "end": "(?i)^\\s*(end\\s?(header|legend|footer))",
+          "end": "(?i)^\\s*(end\\s?(header|legend|footer|endlegend))",
           "endCaptures": {
             "1": {
               "name": "keyword.other.header_legend_footer.source.wsd"
@@ -479,7 +485,7 @@
           "end": "$",
           "patterns": [
             {
-              "include": "#Gerneral"
+              "include": "#General"
             },
             {
               "comment": "actor and link message",
@@ -830,6 +836,16 @@
               "name": "constant.numeric.class.hideshow.source.wsd"
             }
           }
+        }
+      ]
+    },
+    "StereoType": {
+      "patterns": [
+        {
+          "comment": "stereotype definitions",
+          "name": "stereotype.definitions.source.wsd",
+          "begin": "<<",
+          "end": ">>"
         }
       ]
     }

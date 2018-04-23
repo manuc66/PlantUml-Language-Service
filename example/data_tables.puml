@@ -41,15 +41,43 @@ package "Data Tables" {
     }
 }
 
+package "Domain Entities" {
+	class Child ENTITY
+	class Parent ENTITY
+	class Chart ENTITY
+	class Task ENTITY
+
+	Child "1" -u-{ "n" Kids 
+	Parent "1" -u-{ "n" Parents
+	Chart "1" -u-{ "n" Charts
+	Task "1" -u-{ "n" Tasks
+}
+
 package "Stored procedures" {
+	class GetChildrenByParentId PROCEDURE {
+		+ParentId
+	}
+
+	class GetTasksForChildId PROCEDURE {
+		+ChildId
+	}
+
+	Parent_Child_Linker #-u- GetChildrenByParentId
+	'GetChildrenByParentId -d-{ Child
+
+	Charts_Kids_Linker #-u- GetTasksForChildId
+	Charts_Tasks_Linker #-u- GetTasksForChildId
+	'GetTasksForChildId -d-{ Task
 
 }
 
-Charts_Tasks_Linker -down-> Charts
-Charts_Tasks_Linker -down-> Tasks
-Parent_Child_Linker -up-> Kids
-Parent_Child_Linker -up-> Parents
-Charts_Kids_Linker -up-> Kids
-Charts_Kids_Linker -down-> Charts
+Charts_Tasks_Linker -d-> Charts
+Charts_Tasks_Linker -d-> Tasks
+
+Parent_Child_Linker -d-> Kids
+Parent_Child_Linker -d-> Parents
+
+Charts_Kids_Linker -d-> Kids
+Charts_Kids_Linker -d-> Charts
 
 @enduml

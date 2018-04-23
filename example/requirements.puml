@@ -1,0 +1,18 @@
+@startuml
+
+!import SysML
+
+Requirement(Foo,ipsum lorem)
+BusinessNeed(Bar,loremi defo)
+Generic(iFooBar,non edifac)
+
+Associate(Foo,Bar)
+Derive(Foo,iFooBar)
+
+Option(Foo, Html)
+
+Expectation(Foo,supports html)
+Criticality(Bar, High)
+VerifyWithTest(iFooBar)
+
+@enduml

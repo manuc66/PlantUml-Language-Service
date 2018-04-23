@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Diagnostics;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.VisualBasic;
 
@@ -41,7 +42,7 @@ namespace PlantUmlLanguageService.Services
 
         private static string GetMacro(string name)
         {
-           return Global.GetResourceString("Macros", name, "macro");
+            return Global.GetResourceString("Macros", name, "macro");
         }
 
         private static string GetTheme(string name)
@@ -54,29 +55,44 @@ namespace PlantUmlLanguageService.Services
     public static class FileSystemExtensions
     {
         public static string IncludeFiles(this string[] lines)
-        {          
-            var paths = SolutionService.GetFileInfosForActiveSolution().Select(file => file.FullName).ToList();
+        {
             var idx = 0;
             lines.ToList().ForEach(
                 line =>
                 {
                     if (line.StartsWith("!include"))
                     {
-                        try {
-                            var filename = Regex.Replace(line, @"^((!include)\s)", string.Empty);
+                        try
+                        {
+                            var filename = Regex.Replace(line, @"^((!include)\s)", string.Empty).Trim();
+                            Debug.WriteLine(filename);
                             if (filename.ToLower().StartsWith("-p"))
                             {
-                                filename = Regex.Replace(filename, @"(?i)^((-p)\s)", string.Empty);
+                                filename = Regex.Replace(filename, @"(?i)^((-p)\s)", string.Empty).Trim();
                             }
                             else
                             {
-                                filename = paths.Find(path => path.EndsWith(filename));
+                                var paths = SolutionService.GetFileInfosForActiveSolution().Select(file => file.FullName).ToList();
+                                var foundpath = paths.Find(path => System.IO.Path.GetFileName(path) == filename);
+                                Debug.WriteLine(foundpath);
+                                if (string.IsNullOrEmpty(foundpath) || foundpath == Global.CurrentFilePath)
+                                {
+                                    line = "!include {SELF}";
+                                    filename = string.Empty;
+                                }
+                                else
+                                {
+                                    filename = foundpath;
+                                }
                             }
+
                             var included = System.IO.File.ReadAllLines(filename).IncludeFiles();
                             var stripped = Regex.Replace(included, @"(@(start|end)(uml|salt|))", ControlChars.CrLf);
                             lines[idx] = stripped;
                         }
-                        catch {
+                        catch (System.Exception ex)
+                        {
+                            Debug.WriteLine(ex.Message);
                             Global.Warnings.Add(line);
                             lines[idx] = string.Empty;
                         }

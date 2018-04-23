@@ -29,6 +29,12 @@ skinparam ActorBackgroundColor<< Registered >> aliceblue
 skinparam ActorBackgroundColor<< Admin >> slategrey
 skinparam ActorBorderColor darkslategrey
 
+!define RESERVED << Reserved >>
+!define CONDITIONAL << Conditional >>
+!define PRIMARY << Primary >>
+!define SECONDARY << Secondary >>
+!define TERTIARY << Tertiary >>
+
 !definelong AnonActor(name)
     Actor name << Guest >>
 !enddefinelong

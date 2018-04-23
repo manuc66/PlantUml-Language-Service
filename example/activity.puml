@@ -1,0 +1,13 @@
+@startuml
+
+start
+
+if (Condition) then (true)
+  :do when true;
+else (false)
+  :do when false;
+endif
+
+stop
+
+@enduml

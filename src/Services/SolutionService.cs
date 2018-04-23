@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using EnvDTE;
 using EnvDTE80;
@@ -29,8 +30,8 @@ namespace PlantUmlLanguageService.Services
         public static List<FileInfo> GetFileInfosForActiveSolution()
         {
             List<FileInfo> Files = new List<FileInfo>();
-            //Files.AddRange(GetActiveSolutionInfo().GetFiles().Where(filename => !(filename.Extension.ToLower() == ".sln")));
             Files.AddRange(GetFilesFrom(GetActiveSolutionInfo()));
+            Files.ForEach(file => Debug.WriteLine(file.FullName));
             return Files;
         }
 

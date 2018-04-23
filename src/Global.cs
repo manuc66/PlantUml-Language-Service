@@ -17,6 +17,8 @@ namespace PlantUmlLanguageService
 
         internal static string CurrentFile = string.Empty;
 
+        internal static string CurrentFilePath = string.Empty;
+
         private static Validator validator = new Validator();
 
         internal static List<string> Warnings = new List<string>();
@@ -45,12 +47,13 @@ namespace PlantUmlLanguageService
             if (Constants.FileTypes.Contains($".{path.Split('.').Last()}"))
             {
                 Warnings.Clear();
+                CurrentFilePath = path;
+                CurrentFile = Path.GetFileNameWithoutExtension(path);
                 DiagramUrl =
                     DiagramService.GetImageUrlForSource(
                         MacroService.CheckImports(File.ReadAllLines(path).IncludeFiles()),
                         "svg"
                     );
-                CurrentFile = Path.GetFileNameWithoutExtension(path);
                 OpenDiagramPreviewer();
             }
             else
@@ -86,7 +89,7 @@ namespace PlantUmlLanguageService
             if (DiagramUrl != Constants.NoImageBase64)
             {
                 string output = 
-                    $"\nMarkdown:\r{string.Format(Constants.UrlFormatMd, DiagramUrl,CurrentFile)}" +
+                    $"\nMarkdown:\r{string.Format(Constants.UrlFormatMd,CurrentFile, DiagramUrl)}" +
                     $"\n\rHtml:\r{string.Format(Constants.UrlFormatSrc, DiagramUrl, CurrentFile)}";
 
                 customPane.OutputString(output);

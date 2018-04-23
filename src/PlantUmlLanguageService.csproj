@@ -94,7 +94,8 @@
     </Content>
     <EmbeddedResource Include="Macros\Activity.macro" />
     <None Include="Resources\base.skin" />
-    <None Include="Macros\Entities.macro" />
+    <EmbeddedResource Include="Macros\Entities.macro" />
+    <EmbeddedResource Include="Macros\Junctions.macro" />
     <Content Include="Resources\Ctx.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>

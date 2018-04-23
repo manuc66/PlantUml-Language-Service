@@ -1,0 +1,28 @@
+@startuml
+
+!import UseCase
+
+Actor Client 
+(Log User In) as (UseCase1) PRIMARY
+(Log User Out) as (UseCase2) PRIMARY
+(Change User Password) as (UseCase3) SECONDARY
+(Update User Details) as (UseCase4) SECONDARY
+
+Client ---> UseCase1
+Client ---> UseCase2
+Client ---> UseCase3
+Client ---> UseCase4
+
+note right of Client
+    This is the User object provider
+    and Authentication consumer
+
+end note
+
+note bottom of UseCase1
+    Primary Use Case
+    a) Authenticate on provision of user credentials
+
+end note
+
+@enduml

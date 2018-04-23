@@ -1,0 +1,6 @@
+@startuml
+
+!include foo.puml 
+!theme blue
+
+@enduml

@@ -5,12 +5,20 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{57A6073C-AEFE-48EB-8640-7781D074098F}"
 	ProjectSection(SolutionItems) = preProject
+		activity.puml = activity.puml
+		archimate.iuml = archimate.iuml
+		blue_foo.puml = blue_foo.puml
 		data_tables.puml = data_tables.puml
 		foo.puml = foo.puml
+		requirements.puml = requirements.puml
+		usecase.puml = usecase.puml
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7F12EAE-EE5B-490B-AC66-7CEE76975A6A}
 	EndGlobalSection
 EndGlobal
