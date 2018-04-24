@@ -95,6 +95,7 @@
     </Content>
     <Content Include="Grammars\LICENSE.txt">
       <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Macros\Activity.macro" />
     <None Include="Properties\template-builder.props" />
@@ -125,6 +126,7 @@
     <EmbeddedResource Include="Templates\loading.html" />
     <EmbeddedResource Include="Templates\feedback.html" />
     <EmbeddedResource Include="Templates\preview.css" />
+    <Content Include="template-report.xml" />
     <Content Include="x64\pdfium.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
