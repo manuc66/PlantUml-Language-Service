@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TemplateReport>
+  <ItemTemplates>
+    <ItemTemplate Path="ItemTemplates\PlantUml\Definitions\CSharp.vstemplate" Name="PlantUml file" Description="Create an empty PlantUml file for diagramming, modelling and code visualization" ProjectType="CSharp" ProjectSubType="" />
+    <ItemTemplate Path="ItemTemplates\PlantUml\Definitions\VB.vstemplate" Name="PlantUml file" Description="Create an empty PlantUml file for diagramming, modelling and code visualization" ProjectType="VB" ProjectSubType="" />
+  </ItemTemplates>
+  <ProjectTemplates />
+  <Snippets />
+</TemplateReport>

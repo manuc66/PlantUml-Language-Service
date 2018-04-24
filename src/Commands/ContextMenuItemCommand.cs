@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using System.Linq;
 using Microsoft.VisualStudio.Shell;
 
 namespace PlantUmlLanguageService.Commands
@@ -12,6 +13,8 @@ namespace PlantUmlLanguageService.Commands
 
         private readonly Package package;
 
+        private OleMenuCommand OlemenuItem;
+
         private ContextMenuItemCommand(Package package)
         {
             this.package = package ?? throw new ArgumentNullException("package");
@@ -20,8 +23,12 @@ namespace PlantUmlLanguageService.Commands
             if (commandService != null)
             {
                 var menuCommandID = new CommandID(CommandSet, FileContextMenuCommandId);
-                var menuItem = new MenuCommand(this.MenuItemCallback, menuCommandID);
-                commandService.AddCommand(menuItem);
+                OlemenuItem = new OleMenuCommand(this.MenuItemCallback, menuCommandID)
+                {
+                    Visible = false
+                };
+                OlemenuItem.BeforeQueryStatus += EnableForPlantUmlMenuItems;
+                commandService.AddCommand(OlemenuItem);
             }
         }
 
@@ -44,15 +51,37 @@ namespace PlantUmlLanguageService.Commands
             Instance = new ContextMenuItemCommand(package);
         }
 
+        private void EnableForPlantUmlMenuItems(object sender, EventArgs e)
+        {
+            EnvDTE.DTE dte = (EnvDTE.DTE)ServiceProvider.GetService(typeof(EnvDTE.DTE));
+            EnvDTE.SelectedItems selectedItems = dte.SelectedItems;
+
+            if (selectedItems != null)
+            {
+                foreach (EnvDTE.SelectedItem selectedItem in selectedItems)
+                {
+                    EnvDTE.ProjectItem projectItem = selectedItem.ProjectItem as EnvDTE.ProjectItem;
+
+                    if (projectItem != null && Constants.FileTypes.Contains($".{projectItem.FileNames[1].Split('.').Last()}"))
+                    {
+                        OlemenuItem.Visible = true;
+                    }
+                    else
+                    {
+                        OlemenuItem.Visible = false;
+                    }
+                }
+            }
+
+        }
+
         private void MenuItemCallback(object sender, EventArgs e)
         {
             EnvDTE.DTE dte;
             EnvDTE.SelectedItems selectedItems;
             EnvDTE.ProjectItem projectItem;
-            EnvDTE.Solution solution;
             dte = (EnvDTE.DTE)ServiceProvider.GetService(typeof(EnvDTE.DTE));
             selectedItems = dte.SelectedItems;
-            solution = dte.Solution;
 
             if (selectedItems != null)
             {

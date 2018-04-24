@@ -1,0 +1,17 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>CSharp</ProjectType>
+    <Name>PlantUml file</Name>
+    <DefaultName>plantumlfile.puml</DefaultName>
+    <Description>Create an empty PlantUml file for diagramming, modelling and code visualization</Description>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <PreviewImage>icon.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem TargetFileName="$fileinputname$.puml" ReplaceParameters="true">
+      Base/base.puml
+    </ProjectItem>
+  </TemplateContent>
+</VSTemplate>

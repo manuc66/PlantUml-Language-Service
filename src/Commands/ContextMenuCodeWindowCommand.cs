@@ -2,8 +2,6 @@
 using System.ComponentModel.Design;
 using System.Linq;
 using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
-using PlantUmlLanguageService.Services;
 
 namespace PlantUmlLanguageService.Commands
 {
@@ -15,6 +13,8 @@ namespace PlantUmlLanguageService.Commands
 
         private readonly Package package;
 
+        private OleMenuCommand OlemenuItem;
+
         private ContextMenuCodeWindowCommand(Package package)
         {
             this.package = package ?? throw new ArgumentNullException("package");
@@ -23,8 +23,12 @@ namespace PlantUmlLanguageService.Commands
             if (commandService != null)
             {
                 var menuCommandID = new CommandID(CommandSet, CodeWindowContextMenuCommandId);
-                var menuItem = new MenuCommand(this.MenuItemCallback, menuCommandID);
-                commandService.AddCommand(menuItem);
+                OlemenuItem = new OleMenuCommand(this.MenuItemCallback, menuCommandID)
+                {
+                    Visible = false
+                };
+                OlemenuItem.BeforeQueryStatus += EnableForPlantUmlMenuItems;
+                commandService.AddCommand(OlemenuItem);
             }
         }
 
@@ -32,6 +36,22 @@ namespace PlantUmlLanguageService.Commands
         {
             get;
             private set;
+        }
+
+        private void EnableForPlantUmlMenuItems(object sender, EventArgs e)
+        {
+            EnvDTE.DTE dte = (EnvDTE.DTE)ServiceProvider.GetService(typeof(EnvDTE.DTE));
+            EnvDTE.Document activeDocument = dte.ActiveDocument;
+
+            if (activeDocument != null && Constants.FileTypes.Contains($".{activeDocument.FullName.Split('.').Last()}"))
+            {
+
+                OlemenuItem.Visible = true;
+            }
+            else
+            {
+                OlemenuItem.Visible = false;
+            }
         }
 
         private IServiceProvider ServiceProvider

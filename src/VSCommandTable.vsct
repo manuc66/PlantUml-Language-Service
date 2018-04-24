@@ -17,9 +17,11 @@
           <ButtonText>PlantUml Language Reference</ButtonText>
         </Strings>
       </Button>
-      
+
       <Button guid="guidVSPackageCommandFileContextMenuCmdSet" id="FileContextMenuCommandId" type="Button">
         <Icon guid="guidImages" id="bmpPicSearch" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <!--<CommandFlag>DefaultInvisible</CommandFlag>-->
         <Strings>
           <ButtonText>Preview Diagram</ButtonText>
         </Strings>
@@ -27,11 +29,13 @@
 
       <Button guid="guidVSPackageCommandCodeWindowContextMenuCmdSet" id="CodeWindowContextMenuCommandId" type="Button">
         <Icon guid="guidImages" id="bmpPicSearch" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <!--<CommandFlag>DefaultInvisible</CommandFlag>-->
         <Strings>
           <ButtonText>Preview Diagram</ButtonText>
         </Strings>
-      </Button>      
-      
+      </Button>
+
       <Button guid="guidVSPackageCmdSet" id="cmdidDiagramPreviewToolWindowCommand" priority="0x0100" type="Button">
         <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1" />
         <Icon guid="guidImages" id="bmpPicSearch" />

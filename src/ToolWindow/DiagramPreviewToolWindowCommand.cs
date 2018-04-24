@@ -87,7 +87,7 @@ namespace PlantUmlLanguageService.ToolWindow
             {
                 throw new NotSupportedException("Cannot create tool window");
             }
-
+            window.Caption = $"PlantUml Preview Window {Global.CurrentFile}";
             IVsWindowFrame windowFrame = (IVsWindowFrame)window.Frame;
             Microsoft.VisualStudio.ErrorHandler.ThrowOnFailure(windowFrame.Show());
         }
