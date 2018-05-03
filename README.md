@@ -2,6 +2,8 @@
 
 ![PlantUml](src/Resources/Icon.png)
 
+Available from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=KieranBorsden.PlantUmlLanguageService)
+
 ## Description
 
 
