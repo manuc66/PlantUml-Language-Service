@@ -91,7 +91,11 @@ namespace PlantUmlLanguageService.Commands
 
                     if (projectItem != null)
                     {
-                        projectItem.Save();
+                        try
+                        {
+                            projectItem.Save();
+                        }
+                        catch { }
                         ServiceProvider.PreviewFileContent(projectItem.FileNames[1]);
                     }
                 }

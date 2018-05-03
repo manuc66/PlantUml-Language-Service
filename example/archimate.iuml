@@ -4,6 +4,8 @@ sprite $bProcess jar:archimate/business-process
 sprite $aService jar:archimate/application-service
 sprite $aComponent jar:archimate/application-component
 
+rectangle #application "Digital Customer\n Intimacy Strategy" as DCIStrategy <<course-of-action>>
+
 archimate #Business "Handle claim"  as HC <<business-process>>
 archimate #Business "Capture Information"  as CI <<business-process>>
 archimate #Business "Notify\nAdditional Stakeholders" as NAS <<business-process>>

@@ -1,0 +1,8 @@
+﻿!define Junction_Or circle #black
+!define Junction_And circle #whitesmoke
+
+skinparam rectangle {
+    DiagonalCorner<<outcome>> 10
+    RoundCorner<<action>> 30
+    RoundCorner<<capability>> 30
+}

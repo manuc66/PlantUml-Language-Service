@@ -101,7 +101,7 @@
     <None Include="Properties\template-builder.props" />
     <None Include="Resources\base.skin" />
     <EmbeddedResource Include="Macros\Entities.macro" />
-    <EmbeddedResource Include="Macros\Junctions.macro" />
+    <EmbeddedResource Include="Macros\archimate.macro" />
     <Content Include="ItemTemplates\PlantUml\Base\base.puml">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
