@@ -10,7 +10,7 @@ namespace PlantUmlLanguageService.Services
     /// <summary>
     /// 
     /// </summary>
-    internal class DiagramService
+    public class DiagramService
     {
 
         /// <summary>
