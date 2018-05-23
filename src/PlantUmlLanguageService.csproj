@@ -65,6 +65,39 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Control\Validator.cs" />
+    <Compile Include="Disassembler\Attributes\ArrowAttribute.cs" />
+    <Compile Include="Disassembler\Attributes\ModifierAttribute.cs" />
+    <Compile Include="Disassembler\Attributes\TextValueAttribute.cs" />
+    <Compile Include="Disassembler\Extensions.cs" />
+    <Compile Include="Disassembler\Forms\PlsReverseFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Disassembler\Forms\PlsReverseFrm.Designer.cs">
+      <DependentUpon>PlsReverseFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Disassembler\Globals.cs" />
+    <Compile Include="Disassembler\Models\Assembly.cs" />
+    <Compile Include="Disassembler\Models\Class.cs" />
+    <Compile Include="Disassembler\Models\Enum.cs" />
+    <Compile Include="Disassembler\Models\Function.cs" />
+    <Compile Include="Disassembler\Models\Generic.cs" />
+    <Compile Include="Disassembler\Models\Interface.cs" />
+    <Compile Include="Disassembler\Models\Member.cs" />
+    <Compile Include="Disassembler\Models\ModifierType.cs" />
+    <Compile Include="Disassembler\Models\Namespace.cs" />
+    <Compile Include="Disassembler\Models\Object.cs" />
+    <Compile Include="Disassembler\Models\Overload.cs" />
+    <Compile Include="Disassembler\Models\Property.cs" />
+    <Compile Include="Disassembler\Models\Relationship.cs" />
+    <Compile Include="Disassembler\Models\RelationshipType.cs" />
+    <Compile Include="Disassembler\Models\Void.cs" />
+    <Compile Include="Disassembler\Parser\AssemblyDiagrammer.cs" />
+    <Compile Include="Disassembler\Parser\Documentor.cs" />
+    <Compile Include="Disassembler\Parser\Imager.cs" />
+    <Compile Include="Disassembler\Parser\Reflector.cs" />
+    <Compile Include="Disassembler\Services\DocumentService.cs" />
+    <Compile Include="Disassembler\Services\ImageService.cs" />
+    <Compile Include="Disassembler\Templates.cs" />
     <Compile Include="Exports.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Intellisense\EditorFactory.cs" />
@@ -97,6 +130,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Disassembler\Forms\PlsReverseFrm.resx">
+      <DependentUpon>PlsReverseFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Macros\Activity.macro" />
     <None Include="Properties\template-builder.props" />
     <None Include="Resources\base.skin" />
@@ -343,6 +379,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="TemplateBuilder, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\TemplateBuilder.1.1.5-beta\lib\TemplateBuilder.dll</HintPath>
     </Reference>
@@ -368,6 +405,7 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.VisualStudio.Threading.Analyzers.15.6.46\analyzers\cs\Microsoft.VisualStudio.Threading.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="..\packages\Microsoft.VisualStudio.SDK.EmbedInteropTypes.15.0.17\build\Microsoft.VisualStudio.SDK.EmbedInteropTypes.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.SDK.EmbedInteropTypes.15.0.17\build\Microsoft.VisualStudio.SDK.EmbedInteropTypes.targets')" />
