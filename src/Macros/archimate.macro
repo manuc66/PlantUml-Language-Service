@@ -1,6 +1,25 @@
-﻿!define Junction_Or circle #black
+﻿sprite $access jar:archimate/access
+sprite $aggregation jar:archimate/aggregation
+sprite $association jar:archimate/association
+sprite $assignment jar:archimate/assignment
+sprite $realisation jar:archimate/realisation
+sprite $usedby jar:archimate/used-by
+sprite $flow jar:archimate/flow
+sprite $trigger jar:archimate/triggering
+sprite $composition jar:archimate/composition
+sprite $influence jar:archimate/influence
+!define assignto(b, text, direction) direction b : text \n <$assignment>
+!define accesses(b, text, direction) direction b : text \n <$access>
+!define aggregates(b, text, direction) direction b : text \n <$aggregation>
+!define associatedwith(b, text, direction) direction b : text \n <$association>
+!define realizes(b, text, direction) direction b : text \n <$realisation>
+!define usedby(b, text, direction) direction b : text \n <$usedby>
+!define flow(b, text, direction) direction b : text \n <$flow>
+!define triggers(b, text, direction) direction b : text \n <$trigger>
+!define composes(b, text, direction) direction b : text \n <$composition>
+!define influences(b, text, direction) direction b : text \n <$influence>
+!define Junction_Or circle #black
 !define Junction_And circle #whitesmoke
-
 skinparam rectangle {
     DiagonalCorner<<outcome>> 10
     RoundCorner<<action>> 30
