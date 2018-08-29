@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace PlantUmlLanguageService.Services
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class DiagramService
     {
@@ -43,8 +43,17 @@ namespace PlantUmlLanguageService.Services
             if (uri != Constants.NoImageBase64)
             {
                 var client = new WebClient();
-                string result = await client.DownloadStringTaskAsync(uri);
-                WebHeaderCollection response = client.ResponseHeaders;
+                WebHeaderCollection response;
+                try
+                {
+                    string result = await client.DownloadStringTaskAsync(uri);
+                    response = client.ResponseHeaders;
+                }
+                catch (WebException e)
+                {
+                    // in this case, the headers are in the exception.Response
+                    response = e.Response.Headers;
+                }
                 try
                 {
                     Global.Validator = new Validator(response.Get("X-PlantUML-Diagram-Description"), response.Get("X-PlantUML-Diagram-Error"), response.Get("X-PlantUML-Diagram-Error-Line"));
