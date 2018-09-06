@@ -6,9 +6,10 @@ using PlantUmlLanguageService.Services;
 namespace PlantUmlLanguageService.Disassembler
 {
     /// <summary>
-    /// 
+    /// TODO: implement as context menu command when user r-clicks solution root
+    /// The core disassembly agent; this class reflects over the targetted assembly and parses it high level to puml and md files
     /// </summary>
-    public static class Globals
+    public static class Core
     {
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace PlantUmlLanguageService.Disassembler
         /// </summary>
         /// <param name="source">The source.</param>
         /// <param name="imageformat">The imageformat.</param>
-        public static void RenderDiagram(string source, Globals.ImageRequestFormat imageformat)
+        public static void RenderDiagram(string source, Core.ImageRequestFormat imageformat)
         {
             DiagramUrl = GetDiagram(source, imageformat.GetText());
         }

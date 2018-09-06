@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using Microsoft.VisualBasic;
-using System.Runtime.CompilerServices;
 using PlantUmlLanguageService.Services;
 using PlantUmlLanguageService.Disassembler.Services;
+//using System.Diagnostics;
 
 namespace PlantUmlLanguageService.Disassembler.Parser
 {
@@ -133,7 +132,7 @@ namespace PlantUmlLanguageService.Disassembler.Parser
             {
                 if ((!n.Name.Contains("get_")) && (!n.Name.Contains("set_")))
                 {
-                    if (!Globals.BaseFunctions.Contains(n.Name))
+                    if (!Core.BaseFunctions.Contains(n.Name))
                     {
                         var func = new Models.Function
                         {
@@ -319,7 +318,7 @@ namespace PlantUmlLanguageService.Disassembler.Parser
         /// <returns></returns>
         public static bool ParseAssemblyToUml(string path, string output, bool useIncludes = false)
         {
-            Globals.Root = output;
+            Core.Root = output;
             try
             {
                 var dll = ParseAssembly(path);
@@ -364,12 +363,12 @@ namespace PlantUmlLanguageService.Disassembler.Parser
             }
             catch (Exception ex)
             {
-                Globals.Message += Environment.NewLine + ex.Message;
+                Core.Message += Environment.NewLine + ex.Message;
                 if (ex is ReflectionTypeLoadException)
                 {
                     var typeLoadException = ex as ReflectionTypeLoadException;
                     var loaderExceptions = typeLoadException.LoaderExceptions.ToList();
-                    loaderExceptions.ForEach((e) => Globals.Message += Environment.NewLine + e.Message);
+                    loaderExceptions.ForEach((e) => Core.Message += Environment.NewLine + e.Message);
 
                 }
 
@@ -408,7 +407,7 @@ namespace PlantUmlLanguageService.Disassembler.Parser
         /// <returns></returns>
         public static bool ParseObjectToUml(Type type, string output)
         {
-            Globals.Root = output;
+            Core.Root = output;
             try
             {
                 var uml = ParseObject(type);
@@ -418,13 +417,13 @@ namespace PlantUmlLanguageService.Disassembler.Parser
             }
             catch (Exception ex)
             {
-                Globals.Message = Environment.NewLine + ex.Message;
+                Core.Message = Environment.NewLine + ex.Message;
 
                 if (ex is ReflectionTypeLoadException)
                 {
                     var typeLoadException = ex as ReflectionTypeLoadException;
                     var loaderExceptions = typeLoadException.LoaderExceptions.ToList();
-                    loaderExceptions.ForEach((e) => Globals.Message += Environment.NewLine + e.Message);
+                    loaderExceptions.ForEach((e) => Core.Message += Environment.NewLine + e.Message);
 
                 }
 

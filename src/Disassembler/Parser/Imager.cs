@@ -1,6 +1,7 @@
 ﻿using PlantUmlLanguageService.Disassembler.Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -8,6 +9,13 @@ namespace PlantUmlLanguageService.Disassembler.Parser
 {
     public class Imager
     {
+        /// <summary>
+        /// Creates the images.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="output">The output.</param>
+        /// <param name="relativePath">The relative path.</param>
+        /// <returns></returns>
         public static bool CreateImages(string input, string output, string relativePath = null)
         {
             try
@@ -18,12 +26,12 @@ namespace PlantUmlLanguageService.Disassembler.Parser
                     DocumentService.Xml = XDocument.Load(input.Replace(".dll", ".xml"));
                 }
                 Models.Assembly dll = null;
-                Globals.Root = output;
+                Core.Root = output;
                 if (relativePath == null)
                 {
-                    relativePath = Globals.Root;
+                    relativePath = Core.Root;
                 }
-                Globals.DocumentRoot = relativePath;
+                Core.DocumentRoot = relativePath;
                 dll = Reflector.ParseAssembly(input);
 
                 List<string> FilesList = new List<string>();
@@ -31,7 +39,7 @@ namespace PlantUmlLanguageService.Disassembler.Parser
                 dll.Namespaces = dll.Namespaces.OrderBy((x) => x.Name).ToList();
                 dll.Namespaces.ForEach((n) =>
                 {
-                    Globals.CurrentObject = n;
+                    Core.CurrentObject = n;
                     var subdirectory = n.Name.Replace(".", "\\");
                     var directory = $"{output}\\{subdirectory}";
                     System.IO.Directory.CreateDirectory(directory);
@@ -70,7 +78,8 @@ namespace PlantUmlLanguageService.Disassembler.Parser
             }
             catch (Exception ex)
             {
-
+                //TODO: do not obscure exception but handle gracefully
+                Debug.WriteLine(ex.Message);
             }
 
             return true;

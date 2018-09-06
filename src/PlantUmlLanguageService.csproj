@@ -75,7 +75,7 @@
     <Compile Include="Disassembler\Forms\PlsReverseFrm.Designer.cs">
       <DependentUpon>PlsReverseFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Disassembler\Globals.cs" />
+    <Compile Include="Disassembler\Core.cs" />
     <Compile Include="Disassembler\Models\Assembly.cs" />
     <Compile Include="Disassembler\Models\Class.cs" />
     <Compile Include="Disassembler\Models\Enum.cs" />

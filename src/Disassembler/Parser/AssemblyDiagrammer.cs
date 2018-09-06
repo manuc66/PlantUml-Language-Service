@@ -366,7 +366,7 @@ namespace PlantUmlLanguageService.Disassembler.Parser
         /// <returns></returns>
         private static string Aggregate(string @class, string @object)
         {
-            if (!Globals.BaseTypes.Contains(@object.Replace("[]", "")))
+            if (!Core.BaseTypes.Contains(@object.Replace("[]", "")))
             {
                 return (@class + " o.. " + (@object.EndsWith("[]") ? "\" Many \"" + @object.Replace("[]", "") : Regex.Replace(@object, Reflector.TypingSetter, "")) + Environment.NewLine);
             }
@@ -381,7 +381,7 @@ namespace PlantUmlLanguageService.Disassembler.Parser
         /// <returns></returns>
         private static string Composite(string @class, string @object)
         {
-            if (!Globals.BaseTypes.Contains(@object.Replace("[]", "")))
+            if (!Core.BaseTypes.Contains(@object.Replace("[]", "")))
             {
                 return (@class + " *-- " + (@object.EndsWith("[]") ? "\" Many \"" + @object.Replace("[]", "") : Regex.Replace(@object, Reflector.TypingSetter, "")) + Environment.NewLine);
             }
@@ -396,7 +396,7 @@ namespace PlantUmlLanguageService.Disassembler.Parser
         /// <returns></returns>
         private static string Consumes(string @class, string @object)
         {
-            if (!Globals.BaseTypes.Contains(@object.Replace("[]", "")))
+            if (!Core.BaseTypes.Contains(@object.Replace("[]", "")))
             {
                 return (@class + " <.. " + (@object.EndsWith("[]") ? "\" Many \"" + @object.Replace("[]", "") : Regex.Replace(@object, Reflector.TypingSetter, "")) + Environment.NewLine);
             }
@@ -411,7 +411,7 @@ namespace PlantUmlLanguageService.Disassembler.Parser
         /// <returns></returns>
         private static string Provides(string @class, string @object)
         {
-            if (!Globals.BaseTypes.Contains(@object.Replace("[]", "")))
+            if (!Core.BaseTypes.Contains(@object.Replace("[]", "")))
             {
                 return (@class + " -r-> " + (@object.EndsWith("[]") ? "\" Many \"" + @object.Replace("[]", "") : Regex.Replace(@object, Reflector.TypingSetter, "")) + Environment.NewLine);
             }
@@ -428,7 +428,7 @@ namespace PlantUmlLanguageService.Disassembler.Parser
             List<string> _props = new List<string>();
             properties.ForEach((n) =>
             {
-                if ((!Globals.DataTypes.Contains(n.Type)) && (!Globals.BaseTypes.Contains(Regex.Replace(n.Type.Name, Reflector.TypingSetter, ""))))
+                if ((!Core.DataTypes.Contains(n.Type)) && (!Core.BaseTypes.Contains(Regex.Replace(n.Type.Name, Reflector.TypingSetter, ""))))
                 {
                     Compositions.Add(Regex.Replace(n.Type.Name, Reflector.TypingSetter, ""));
                 }
@@ -469,13 +469,13 @@ namespace PlantUmlLanguageService.Disassembler.Parser
             funcs.ForEach((n) =>
             {
                 string inputs = string.Empty;
-                if (!Globals.BaseTypes.Contains(n.Return))
+                if (!Core.BaseTypes.Contains(n.Return))
                 {
                     Providers.Add(n.Return.Replace("[]", ""));
                 }
                 n.Inputs.ForEach((x) =>
                 {
-                    if ((!Globals.DataTypes.Contains(x.Type)) && (!Globals.BaseTypes.Contains(Regex.Replace(x.Type.Name, Reflector.TypingSetter, ""))))
+                    if ((!Core.DataTypes.Contains(x.Type)) && (!Core.BaseTypes.Contains(Regex.Replace(x.Type.Name, Reflector.TypingSetter, ""))))
                     {
                         Consumers.Add(Regex.Replace(x.Type.Name, Reflector.TypingSetter, ""));
                     }
@@ -510,7 +510,7 @@ namespace PlantUmlLanguageService.Disassembler.Parser
         /// <returns></returns>
         private static string IncludeDiagram(string name)
         {
-            var directories = (new System.IO.DirectoryInfo(Globals.Root)).GetDirectories().ToList();
+            var directories = (new System.IO.DirectoryInfo(Core.Root)).GetDirectories().ToList();
             string IncludePath = string.Empty;
             directories.ForEach((dir) =>
             {
@@ -522,7 +522,7 @@ namespace PlantUmlLanguageService.Disassembler.Parser
                 //'Exit Sub
             });
 
-            var fullpath = System.IO.Path.Combine(Globals.Root, System.IO.Path.Combine(IncludePath, name));
+            var fullpath = System.IO.Path.Combine(Core.Root, System.IO.Path.Combine(IncludePath, name));
 
             if (System.IO.File.Exists(fullpath + ".plantuml"))
             {

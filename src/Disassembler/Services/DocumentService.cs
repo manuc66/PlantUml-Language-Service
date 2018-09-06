@@ -68,7 +68,7 @@ namespace PlantUmlLanguageService.Disassembler.Services
             }
             @class.Properties.ForEach((p) =>
             {
-                Globals.CurrentObject = p;
+                Core.CurrentObject = p;
                 docDetail += p.Documentation;
             });
             if (@class.Functions.Count > 0)
@@ -77,7 +77,7 @@ namespace PlantUmlLanguageService.Disassembler.Services
             }
             @class.Functions.ForEach((f) =>
             {
-                Globals.CurrentObject = f;
+                Core.CurrentObject = f;
                 docDetail += f.Documentation;
             });
             if (@class.Voids.Count > 0)
@@ -86,7 +86,7 @@ namespace PlantUmlLanguageService.Disassembler.Services
             }
             @class.Voids.ForEach((v) =>
             {
-                Globals.CurrentObject = v;
+                Core.CurrentObject = v;
                 docDetail += v.Documentation;
             });
             //if (@class.ExtraDetail.Length > 0)
@@ -171,7 +171,7 @@ namespace PlantUmlLanguageService.Disassembler.Services
             {
                 Console.WriteLine("Reading " + c.Name);
                 docIndex += string.Format(ClassLink, c.Name, c.Name.ToLower());
-                Globals.CurrentObject = c;
+                Core.CurrentObject = c;
                 docBody += c.Documentation;
             });
 
@@ -179,7 +179,7 @@ namespace PlantUmlLanguageService.Disassembler.Services
             {
                 Console.WriteLine("Reading " + i.Name);
                 docIndex += string.Format(ClassLink, i.Name, i.Name.ToLower());
-                Globals.CurrentObject = i;
+                Core.CurrentObject = i;
                 docBody += i.Documentation;
             });
 
@@ -187,7 +187,7 @@ namespace PlantUmlLanguageService.Disassembler.Services
             {
                 Console.WriteLine("Reading " + e.Name);
                 docIndex += string.Format(ClassLink, e.Name, e.Name.ToLower());
-                Globals.CurrentObject = e;
+                Core.CurrentObject = e;
                 docBody += string.Format(Templates.DiagramTemplate, e.Name, e.DiagramUrl);
             });
 
@@ -195,12 +195,12 @@ namespace PlantUmlLanguageService.Disassembler.Services
             return string.Format(
                 Templates.MainTemplate.
                 Replace("[$Topography]", topography).
-                Replace("[$PseudoNamespace]", $"[Pseudo Namespace]({Globals.DocumentRoot}/{docTitle.Replace("#", "")})").
-                Replace("[$NavigationUp]", $"[{GetNavigationUpLink(docTitle).Replace("#", "")}]({Globals.DocumentRoot}/{GetNavigationUpLink(docTitle).Replace("#", "")}.md)"),
+                Replace("[$PseudoNamespace]", $"[Pseudo Namespace]({Core.DocumentRoot}/{docTitle.Replace("#", "")})").
+                Replace("[$NavigationUp]", $"[{GetNavigationUpLink(docTitle).Replace("#", "")}]({Core.DocumentRoot}/{GetNavigationUpLink(docTitle).Replace("#", "")}.md)"),
                 docTitle,
                 docIndex,
                 docBody,
-                Globals.DocumentRoot
+                Core.DocumentRoot
             );
 
         }
@@ -219,7 +219,7 @@ namespace PlantUmlLanguageService.Disassembler.Services
 
         internal static string Template(string input, string @namespace, string @class)
         {
-            return input.Replace("[$PseudoCode]", $"[Pseudo Code]({Globals.DocumentRoot}/{@namespace.Replace("#", "")}/{@class.Replace("#", "")}.plantuml)");
+            return input.Replace("[$PseudoCode]", $"[Pseudo Code]({Core.DocumentRoot}/{@namespace.Replace("#", "")}/{@class.Replace("#", "")}.plantuml)");
         }
 
     }

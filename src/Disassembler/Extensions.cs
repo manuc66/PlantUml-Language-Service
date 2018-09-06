@@ -1,6 +1,7 @@
 ﻿using PlantUmlLanguageService.Disassembler.Attributes;
 using PlantUmlLanguageService.Disassembler.Models;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -52,6 +53,8 @@ namespace PlantUmlLanguageService.Disassembler
             }
             catch (Exception ex)
             {
+                // will catch when known | TODO: handler
+                Debug.WriteLine(ex.Message);
                 return false;
             }
         }

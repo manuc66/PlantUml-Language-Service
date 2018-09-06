@@ -2,4 +2,7 @@
 '' plantumlfile1
 bob -> alice
 
+'' uncomment below for error test
+''zxcvbnm
+
 @enduml

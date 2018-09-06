@@ -26,7 +26,7 @@ namespace PlantUmlLanguageService
     [ProvideToolWindow(typeof(ReferenceWindow), Style = VsDockStyle.Tabbed, Window = ReferenceWindow.WindowGuidString)]
     [Guid(VSPackage.PackageGuidString)]
     [ProvideToolWindow(typeof(DiagramPreviewToolWindow),Style =VsDockStyle.MDI)]
-    [ProvideAutoLoad(UIContextGuids.SolutionExists)]
+    [ProvideAutoLoad(UIContextGuids.SolutionExists, PackageAutoLoadFlags.BackgroundLoad)]
     public sealed class VSPackage : AsyncPackage
     {
         public const string PackageGuidString = "c097b9f6-5f54-40b4-aa9f-5fe227fc3bb1"; //"ff4f80de-da63-4ca8-9f09-acf70fdc5cb5";

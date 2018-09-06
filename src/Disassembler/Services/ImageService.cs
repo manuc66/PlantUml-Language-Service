@@ -2,7 +2,7 @@
 using System.Drawing.Imaging;
 using System.IO;
 using System.Net;
-using static PlantUmlLanguageService.Disassembler.Globals;
+using static  PlantUmlLanguageService.Disassembler.Core;
 
 namespace PlantUmlLanguageService.Disassembler.Services
 {
