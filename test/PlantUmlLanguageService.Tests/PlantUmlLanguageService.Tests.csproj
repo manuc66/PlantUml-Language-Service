@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\PlantUmlLanguageService.csproj" />
+    <ProjectReference Include="..\..\src\PlantUmlLanguageService.csproj" />
   </ItemGroup>
 
 </Project>
