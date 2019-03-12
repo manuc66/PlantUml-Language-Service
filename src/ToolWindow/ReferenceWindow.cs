@@ -21,7 +21,7 @@ namespace PlantUmlLanguageService.ToolWindow
         {
             Caption = title;
             WebClient client = new WebClient();
-            Byte[] FileBuffer = client.DownloadData("http://plantuml.com/PlantUML_Language_Reference_Guide.pdf");
+            Byte[] FileBuffer = client.DownloadData("http://pdf.plantuml.net/PlantUML_Language_Reference_Guide_en.pdf");
             var ControlHost = new WindowsFormsHost();
             if (FileBuffer != null)
             {

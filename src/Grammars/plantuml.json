@@ -21,7 +21,7 @@
     {
       "comment": "diagram block",
       "name": "diagram.source.wsd",
-      "begin": "(?i)^\\s*(@start(uml|salt|ditaa))((\\s+)(.+?))?\\s*$",
+      "begin": "(?i)^\\s*(@start(uml|salt|ditaa|mindmap))((\\s+)(.+?))?\\s*$",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.diagram.source.wsd"
@@ -30,7 +30,7 @@
           "name": "entity.name.function.diagram.source.wsd"
         }
       },
-      "end": "(?i)^\\s*(@end(uml|salt|ditaa))\\s*$",
+      "end": "(?i)^\\s*(@end(uml|salt|ditaa|mindmap))\\s*$",
       "endCaptures": {
         "1": {
           "name": "keyword.control.diagram.source.wsd"
