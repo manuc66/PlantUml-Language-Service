@@ -112,6 +112,8 @@
     </Compile>
     <Compile Include="Services\DiagramService.cs" />
     <Compile Include="Services\MacroService.cs" />
+    <Compile Include="Services\Offline\PlantUmlRunner.cs" />
+    <Compile Include="Services\Offline\SystemLocatorHelper.cs" />
     <Compile Include="Services\SolutionService.cs" />
     <Compile Include="Services\TemplateService.cs" />
     <Compile Include="ToolWindow\DiagramPreviewToolWindow.cs" />
