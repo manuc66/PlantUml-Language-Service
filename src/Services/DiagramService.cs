@@ -16,7 +16,7 @@ namespace PlantUmlLanguageService.Services
         /// <summary>
         /// The plant uml URL format
         /// </summary>
-        private const string PlantUmlUrlFormat = "http://www.plantuml.com/plantuml/{0}/{1}";
+        private const string PlantUmlUrlFormat = "https://www.plantuml.com/plantuml/{0}/{1}";
 
         /// <summary>
         /// Gets the image URL for source.
