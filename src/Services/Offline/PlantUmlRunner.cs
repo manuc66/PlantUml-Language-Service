@@ -8,15 +8,36 @@ namespace PlantUmlLanguageService.Services.Offline
     {
         private readonly string _javaPath;
         private readonly string _jarPath;
+        private readonly string _graphVizDot;
 
-        public PlantUmlRunner(string javaPath, string jarPath)
+        public PlantUmlRunner(string javaPath, string jarPath, string graphVizDot)
         {
             _javaPath = javaPath;
             _jarPath = jarPath;
+            _graphVizDot = graphVizDot;
         }
 
         public Image Create(string diagramText, string imageFormat)
         {
+
+            if (string.IsNullOrEmpty(_javaPath))
+            {
+                Trace.TraceError("Could not find java.exe");
+                return null;
+            }
+
+            if (string.IsNullOrEmpty(_jarPath))
+            {
+                Trace.TraceError("Could not find plantuml.jar");
+                return null;
+            }
+
+            if (string.IsNullOrEmpty(_graphVizDot))
+            {
+                Trace.TraceError("Could not find Graphviz dot.exe");
+                return null;
+            }
+
             try
             {
                 var process = new Process
@@ -29,31 +50,33 @@ namespace PlantUmlLanguageService.Services.Offline
                         CreateNoWindow = true,
                         RedirectStandardError = true,
                         RedirectStandardInput = true,
-                        RedirectStandardOutput = true
+                        RedirectStandardOutput = true,
+
                     },
                     EnableRaisingEvents = true
                 };
 
+                process.StartInfo.EnvironmentVariables["GRAPHVIZ_DOT"] = _graphVizDot;
+
                 bool started = process.Start();
 
-                if (started)
+                if (!started)
                 {
-                    process.StandardInput.Write(diagramText);
-                    process.StandardInput.Close();
-
-                    return Image.FromStream(process.StandardOutput.BaseStream);
+                    Trace.TraceError("Failed to invoke plant uml");
+                    return null;
                 }
 
-                Debug.WriteLine("Failed to invoke plant uml");
+                process.StandardInput.Write(diagramText);
+                process.StandardInput.Close();
+
+                return Image.FromStream(process.StandardOutput.BaseStream);
+
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Failed to invoke plant uml");
-                Debug.WriteLine(ex.Message);
-                Debug.WriteLine(ex.StackTrace);
+                Trace.TraceError("Failed to invoke plant uml: {0}", ex);
+                return null;
             }
-
-            return null;
         }
     }
 }

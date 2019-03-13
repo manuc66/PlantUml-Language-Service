@@ -19,6 +19,8 @@ using System.Runtime.InteropServices;
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
+[assembly:InternalsVisibleTo("PlantUmlLanguageService.Tests")]
+
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version

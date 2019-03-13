@@ -1,6 +1,6 @@
 ﻿namespace PlantUmlLanguageService.Control
 {
-    class Validator
+    internal class Validator
     {
         public string Description = string.Empty;
         public string Error = string.Empty;

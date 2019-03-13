@@ -9,9 +9,10 @@ namespace PlantUmlLanguageService.Tests
         [Test]
         public void ItCanGeneratePngFromCommandLine()
         {
-            var javaPath = SystemLocatorHelper.GetJavaPath();
-            var plantUmlPath = SystemLocatorHelper.GetPlantUmlPath();
-            using (var image = new PlantUmlRunner(javaPath, plantUmlPath).Create(PlantUmlSample.SamplePlantUml, "png"))
+            var javaPath = PlantUmlPathLocator.FindJava();
+            var plantUmlPath = PlantUmlPathLocator.FindPlantUml();
+            var findGraphVizDot = PlantUmlPathLocator.FindGraphVizDot();
+            using (var image = new PlantUmlRunner(javaPath, plantUmlPath, findGraphVizDot).Create(PlantUmlSample.SamplePlantUml, "png"))
             {
                 var tempFileName = Path.GetTempFileName();
                 image.Save(tempFileName);
