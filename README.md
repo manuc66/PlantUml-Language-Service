@@ -11,7 +11,11 @@ Available from [Visual Studio Marketplace](https://marketplace.visualstudio.com/
 >
 >**[Wikipedia](https://en.wikipedia.org/wiki/PlantUML)**
 
+Please note that PlantUml is not a functional programming language but a static design DSL specifically for creating diagrams.
+
 PlantUml Language Service provides editor features for the [PlantUml Language](http://plantuml.com/) to Visual Studio (2017). These features are listed and elaborated on below.
+
+**In its default state the language service currently posts your markup to the PlantUml server for rendering in the same manner most PlantUml services provide. Client side rendering via GraphViz will be implemented in a future release.**
 
 ##### Credit
 + [PlantUml](https://github.com/plantuml/plantuml) by [arnaudroques](https://github.com/arnaudroques)
