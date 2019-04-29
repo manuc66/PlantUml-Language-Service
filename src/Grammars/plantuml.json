@@ -208,7 +208,7 @@
         {
           "comment": "line begin keywords",
           "name": "keyword.other.linebegin.source.wsd",
-          "match": "(?i)^\\s*(usecase|actor|object|participant|boundary|control|entity|database|create|component|interface|package|node|folder|frame|cloud|annotation|enum|abstract|class|abstract\\s+class|state|autonumber(\\s+stop|resume)?|activate|deactivate|destroy|newpage|alt|else|opt|loop|par|break|critical|group|box|rectangle|namespace|partition|archimate|sprite)\\b"
+          "match": "(?i)^\\s*(usecase|actor|object|participant|boundary|control|entity|database|create|component|interface|package|node|folder|frame|cloud|annotation|enum|abstract|class|abstract\\s+class|state|autonumber(\\s+stop|resume)?|activate|deactivate|destroy|newpage|alt|else|opt|loop|par|break|critical|group|box|rectangle|namespace|partition|archimate|sprite|left|right|side|top|bottom)\\b"
         },
         {
           "comment": "whole line keywords",
@@ -450,7 +450,7 @@
         },
         {
           "comment": "header, legend, footer",
-          "match": "(?i)^\\s*(?:(center|left|right)\\s+)?(header|legend|footer)\\s+(.+?)\\s*$",
+          "match": "(?i)^\\s*(?:(center|left|right|side)\\s+)?(header|legend|footer|side)\\s+(.+?)\\s*$",
           "captures": {
             "1": {
               "name": "constant.numeric.header_legend_footer.source.wsd"
@@ -470,7 +470,7 @@
         },
         {
           "comment": "links",
-          "begin": "(?i)((?:(?:(?:\\s+[ox]|[+*])?(?:<<|<\\|?|\\\\\\\\|\\\\|//|\\}|\\^|#|0|0\\))?)(?=[-.~=]))[-.~=]+(\\[(?:\\#(?:[0-9a-f]{6}|[0-9a-f]{3}|\\w+)(?:[-\\\\/](?:[0-9a-f]{6}|[0-9a-f]{3}|\\w+))?\\b)\\])?(?:(left|right|up|down)(?:[-.~=]))?[-.]*(?:(?:>>|\\|?>|\\\\\\\\|\\\\|//|\\{|\\^|#|0|\\(0)?(?:[ox]\\s+|[+*])?))",
+          "begin": "(?i)((?:(?:(?:\\s+[ox]|[+*])?(?:<<|<\\|?|\\\\\\\\|\\\\|//|\\}|\\^|#|0|0\\))?)(?=[-.~=*]))[-.~=*]+(\\[(?:\\#(?:[0-9a-f]{6}|[0-9a-f]{3}|\\w+)(?:[-\\\\/](?:[0-9a-f]{6}|[0-9a-f]{3}|\\w+))?\\b)\\])?(?:(left|right|up|down)(?:[-.~=]))?[-.]*(?:(?:>>|\\|?>|\\\\\\\\|\\\\|//|\\{|\\^|#|0|\\(0)?(?:[ox]\\s+|[+*])?))",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.note.source.wsd"

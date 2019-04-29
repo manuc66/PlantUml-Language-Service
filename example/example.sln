@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		data_tables.puml = data_tables.puml
 		fail.nonpuml = fail.nonpuml
 		foo.puml = foo.puml
+		minmap.puml = minmap.puml
 		requirements.puml = requirements.puml
 		usecase.puml = usecase.puml
 	EndProjectSection

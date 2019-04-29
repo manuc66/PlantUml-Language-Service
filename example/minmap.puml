@@ -1,0 +1,17 @@
+@startmindmap
+* count
+
+right
+
+** 100
+*** 101
+*** 102
+** 200
+
+left 
+
+** A
+*** AA
+*** AB
+** B
+@endmindmap
