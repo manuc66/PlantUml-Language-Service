@@ -16,7 +16,7 @@ namespace PlantUmlLanguageService.Services
         /// <summary>
         /// The plant uml URL format
         /// </summary>
-        private const string PlantUmlUrlFormat = "https://www.plantuml.com/plantuml/{0}/{1}";
+        private const string PlantUmlUrlFormat = "{2}/plantuml/{0}/{1}";
 
         /// <summary>
         /// Gets the image URL for source.
@@ -28,7 +28,7 @@ namespace PlantUmlLanguageService.Services
         {
             if (!string.IsNullOrEmpty(source))
             {
-                return string.Format(PlantUmlUrlFormat, imageFormat, Encode64(ZipStr(System.Web.HttpUtility.UrlDecode(System.Web.HttpUtility.UrlEncode(source).Replace("+", "%20")))));
+                return string.Format(PlantUmlUrlFormat, imageFormat, Encode64(ZipStr(System.Web.HttpUtility.UrlDecode(System.Web.HttpUtility.UrlEncode(source).Replace("+", "%20")))), Global.BaseUrl);
             }
             return Constants.NoImageBase64;
         }

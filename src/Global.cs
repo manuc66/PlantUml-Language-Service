@@ -12,6 +12,7 @@ namespace PlantUmlLanguageService
 {
     public static class Global
     {
+        internal static string BaseUrl = string.Empty;
 
         internal static string DiagramUrl = string.Empty;
 
@@ -44,6 +45,7 @@ namespace PlantUmlLanguageService
 
         internal static void PreviewFileContent(this IServiceProvider serviceprovider, string path)
         {
+            Global.BaseUrl = "https://www.plantuml.com";
             if (Constants.FileTypes.Contains($".{path.Split('.').Last()}"))
             {
                 Warnings.Clear();

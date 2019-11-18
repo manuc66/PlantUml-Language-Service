@@ -60,6 +60,11 @@ namespace PlantUmlLanguageService.Services
             lines.ToList().ForEach(
                 line =>
                 {
+                    if (line.StartsWith("!url"))
+                    {
+                        Global.BaseUrl = line.Replace("!url", "").Trim();
+                        lines[idx] = string.Empty;
+                    }
                     if (line.StartsWith("!include"))
                     {
                         try

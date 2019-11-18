@@ -1,5 +1,7 @@
 @startuml
 
+!url http://www.plantuml.com
+
 start
 
 if (Condition) then (true)
