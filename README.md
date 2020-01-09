@@ -105,7 +105,7 @@ The PlantUml Language Service respects all common preprocessor commands, and can
 
 ###### !include
 
-While `!inlcude` is usable within the language service, there are caveats:
+While `!include` is usable within the language service, there are caveats:
 
 - makes use of files located inside the active solution directory
 - file to include should be specified [NAME].[EXTENSION]:
